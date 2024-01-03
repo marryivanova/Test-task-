@@ -43,13 +43,13 @@ else:
 Вариант 1: Циклический буфер FIFO с использованием списка
 
 
-class RingBuffer():
-    def init(self, size):
-        self.queue = [None] * size
-        self.size = size
-        self.head = 0  # идекс первого элемента в очереди
-        self.tail = 0  # индекс последнего элемента в очереди
-        self.count = 0  # текущее количество элементов в очереди
+    class RingBuffer():
+        def init(self, size):
+            self.queue = [None] * size
+            self.size = size
+            self.head = 0  # идекс первого элемента в очереди
+            self.tail = 0  # индекс последнего элемента в очереди
+            self.count = 0  # текущее количество элементов в очереди
 
     def append(self, value):
         self.queue.append(value)
