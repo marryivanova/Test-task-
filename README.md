@@ -3,21 +3,21 @@
 
 Вопрос №1  На языке Python написать алгоритм (функцию) определения четности целого числа, который будет аналогичен нижеприведенному по функциональности, но отличен по своей сути. Объяснить плюсы и минусы обеих реализаций. 
 Пример: 
-def isEven(value):
-      return value % 2 == 0
+    def isEven(value):
+          return value % 2 == 0
 
 Ответ:
 
-def even_number(number):
-    if (number >= 0):
-        return (number % 2 == 0)
+    def even_number(number):
+        if number >= 0:
+            return number % 2 == 0
 
-number = int(input("Введите число:"))
-if (even_number(number) == True):
-    print("Число четное!")
+    number = int(input("Введите число:"))
+    if (even_number(number) == True):
+        print("Число четное!")
 
-else:
-    print("Число нечетное!")
+    else:
+        print("Число нечетное!")
 
 Тут несколько отметок оставлю:
 
