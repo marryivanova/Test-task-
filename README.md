@@ -7,7 +7,7 @@
 Пример: 
     
     def isEven(value):
-          return value % 2 == 0
+        return value % 2 == 0
 
 Плюсы:
 + Код короче и более компактный;
