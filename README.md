@@ -53,7 +53,7 @@ else:
 
         def append(self, value):
             self.queue.append(value)
-            if self.count == self.size:
+            if self.count >= self.size:
                     raise Exception("Очередь перолнена")
 
             self.queue[self.tail] = value
@@ -69,7 +69,7 @@ else:
             self.count -= 1
             return value
 
-        def repr(self):
+        def __repr__(self):
             return f"RingBuffer(size={self.size}, head={self.head}, tail={self.tail}, count={self.count})"
 
 Плюсы:
