@@ -44,7 +44,7 @@ else:
 
 
     class RingBuffer():
-        def init(self, size):
+        def __init__(self, size):
             self.queue = [None] * size
             self.size = size
             self.head = 0  # идекс первого элемента в очереди
@@ -53,7 +53,7 @@ else:
 
         def append(self, value):
             self.queue.append(value)
-                if self.count == self.size:
+            if self.count == self.size:
                     raise Exception("Очередь перолнена")
 
             self.queue[self.tail] = value
