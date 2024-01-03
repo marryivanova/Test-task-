@@ -9,8 +9,8 @@
 Ответ:
 
     def even_number(number):
-        if number >= 0:
-            return number % 2 == 0
+        if (number >= 0):
+            return (number % 2 == 0)
 
     number = int(input("Введите число:"))
     if (even_number(number) == True):
