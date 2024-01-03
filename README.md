@@ -42,6 +42,7 @@ else:
 Ответ:
 Вариант 1: Циклический буфер FIFO с использованием списка
 
+
 class RingBuffer():
     def init(self, size):
         self.queue = [None] * size
