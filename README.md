@@ -85,51 +85,51 @@ else:
 
 Вариант 2: Более сложнаяруктура -> Использование связного списка
 
-class CircularBuffer:
-    def __init__(self, size):
-        self.size = size
-        self.head = None
-        self.tail = None
-        self.count = 0
-
-    def enqueue(self, value):
-        if self.count == self.size:
-            raise Exception("Буфер переполнен")
-
-        node = Node(value)
-        if self == 0:
-            self.head = node
-            self.tail = node
-        else:
-            self.tail.next = node
-            self.tail = node
-            self.tail.next = self.head
-
-        self.count += 1
-
-    def dequeue(self):
-        if self.count == 0:
-            raise Exception("Буфер пуст")
-
-        value = self.head.value
-        if self.count > 1:
-            self = self.head.next
-            self.tail.next = self.head
-        else:
+    class CircularBuffer:
+        def __init__(self, size):
+            self.size = size
             self.head = None
             self.tail = None
+            self.count = 0
 
-        self.count -= 1
-        return value
+        def enqueue(self, value):
+            if self.count == self.size:
+                raise Exception("Буфер переполнен")
 
-    def __repr__(self):
-        return f"CircularBuffer(size={self.size}, head={self.head}, tail={self.tail}, count={self.count})"
+            node = Node(value)
+            if self == 0:
+                self.head = node
+                self.tail = node
+            else:
+                self.tail.next = node
+                self.tail = node
+                self.tail.next = self.head
+
+            self.count += 1
+
+        def dequeue(self):
+            if self.count == 0:
+                raise Exception("Буфер пуст")
+
+            value = self.head.value
+            if self.count > 1:
+                self = self.head.next
+                self.tail.next = self.head
+            else:
+                self.head = None
+                self.tail = None
+
+            self.count -= 1
+            return value
+
+        def __repr__(self):
+            return f"CircularBuffer(size={self.size}, head={self.head}, tail={self.tail}, count={self.count})"
 
 
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+    class Node:
+        def __init__(self, value):
+            self.value = value
+            self.next = None
 
 Плюсы:
 - Динамическое изменение размера;
