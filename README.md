@@ -51,26 +51,26 @@ else:
             self.tail = 0  # индекс последнего элемента в очереди
             self.count = 0  # текущее количество элементов в очереди
 
-    def append(self, value):
-        self.queue.append(value)
-        if self.count == self.size:
-            raise Exception("Очередь перолнена")
+        def append(self, value):
+            self.queue.append(value)
+                if self.count == self.size:
+                    raise Exception("Очередь перолнена")
 
-        self.queue[self.tail] = value
-        self.tail = (self.tail + 1) % self.size
-        self.count += 1
+            self.queue[self.tail] = value
+            self.tail = (self.tail + 1) % self.size
+            self.count += 1
 
-    def remove(self):
-        if self.count == 0:
-            raise Exception("Очередь пуста")
+        def remove(self):
+            if self.count == 0:
+                raise Exception("Очередь пуста")
 
-        value = self.queue[self.head]
-        self.head = (self.head + 1) % self.size
-        self.count -= 1
-        return value
+            value = self.queue[self.head]
+            self.head = (self.head + 1) % self.size
+            self.count -= 1
+            return value
 
-    def repr(self):
-        return f"RingBuffer(size={self.size}, head={self.head}, tail={self.tail}, count={self.count})"
+        def repr(self):
+            return f"RingBuffer(size={self.size}, head={self.head}, tail={self.tail}, count={self.count})"
 
 Плюсы:
 - Реализован с помощью списка;
